@@ -7,8 +7,12 @@
 <title>CIS 122 Finance App W.I.P.</title>
 </head>
 <body>
+<%@page import="java.io.FileWriter" %>
+<%@page import="java.io.IOException" %>
+
+
 <h2>Enter Your Information: </h2>
-	<form name="infoForm" action="results.jsp" method="post">
+	<form action="input.jsp" method="post">
 		<table>
 			<tbody>
 			<tr>
@@ -28,33 +32,6 @@
 				<td>Phone Number:</td>
 				<td><input type="text" name="phone" value="" size="20" /></td>
 			</tr>
-			</tbody>
-			</table>
-	
-
-<h2>Enter Your Finances: </h2>
-		<table>
-			<tbody>
-			<tr>
-				<td>Income:</td>
-				<td><input type="number" name="income" value="" size="20" /></td>
-			</tr>
-			<tr>
-				<td>Rent:</td>
-				<td><input type="number" name="rent" value="" size="20" /></td>
-			</tr>
-			<tr>
-				<td>Cost of food:</td>
-				<td><input type="number" name="food" value="" size="20" /></td>
-			</tr>
-			<tr>
-				<td>Cost of entertainment:</td>
-				<td><input type="number" name="ent" value="" size="20" /></td>
-			</tr>
-			<tr>
-				<td>Other expenses:</td>
-				<td><input type="number" name="other" value="" size="20" /></td>
-			</tr>
 			<tr>
 				<td>Are you employed?:</td>
 				<td>
@@ -63,13 +40,30 @@
 				</td>
 			</tr>
 			</tbody>
-		</table>
+			</table>
+
+<b>Monthly Planner</b><br/>
+<b>How many Month</b><b><input type="number" name="MonthIndex" size="2"></b><br/>
+
+<b>Starting month</b><select name="month">
+						<option value=1>January</option>
+						<option value=2>February</option>
+						<option value=3>March</option>
+						<option value=4>April</option>
+						<option value=5>May</option>
+						<option value=6>June</option>
+						<option value=7>July</option>
+						<option value=8>August</option>
+						<option value=9>September</option>
+						<option value=10>October</option>
+						<option value=11>November</option>
+						<option value=12>December</option>
+					</select>
+<b>Year: </b><input type="number" name="year" size="5" value="2020">
+<br/>
 	<input type="reset" value="Clear" name="clear">
 	<input type="submit" value="Submit" name="submit">
 	</form>
-
-
-
 <b>Disclaimer: Project still in development.</b>
 </body>
 </html>

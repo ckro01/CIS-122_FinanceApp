@@ -4,24 +4,24 @@ import java.util.Formatter;
 
 public class printfile {
     private Formatter x;
-    public void openFile(){
+    public void openFile(String file){
         try {
-            x = new Formatter("MonthIndex.txt");
+            x = new Formatter(file);
         } catch (Exception e){
                 System.out.println("error");
         }
     }
-    public void addRecords(int number){
-        x.format("%s", number);
+    public void addRecords(String line){
+        x.format("%s", line);
     }
 
     public void closefile(){
         x.close();
     }
-    public void doit(){
+    public void printx(String filex, String x){
         printfile file = new printfile();
-        file.openFile();
-        file.addRecords(50);
+        file.openFile(filex);
+        file.addRecords(x);
         file.closefile();
     }
 }

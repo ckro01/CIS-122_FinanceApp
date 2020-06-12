@@ -10,11 +10,6 @@
 <form name="infoForm" action="results.jsp" method="post">
 <% int bgnmonth = Integer.parseInt(request.getParameter("month")); //total of month%>
 
-<%@page import="help.printfile" %>
-<% //save the value of total month to MonthIndex.txt file
-printfile save = new printfile();
-save.doit();
-%>
 <%!
 //to cahange the value of month from number to string month(Jan, Feb, ...)
 public String getendmonth(int monthNum){
@@ -42,7 +37,7 @@ switch(monthNum){
         break;
         case 11: endmonth = "November";
         break;
-        case 0: endmonth = "December";
+        case 12: endmonth = "December";
         break;
         default: endmonth = "Missing Month";
 }
@@ -51,20 +46,38 @@ return endmonth;
 %>
 <% //get value of Month and Year from index.jsp
 int monthIndex = Integer.parseInt(request.getParameter("MonthIndex"));
-	int year = Integer.parseInt(request.getParameter("year"));
+	int year = Integer.parseInt(request.getParameter("year")); %>
 
+
+<%@page import="help.printfile" %>
+<% //save the value of total month to MonthIndex.txt file
+printfile save = new printfile();
+save.openFile("MonthIndex.txt");
+save.addRecords(String.valueOf(monthIndex));
+save.closefile();
+save.openFile("date.txt"); //open file for date(for date database)
+%>
+	<h2>Enter Your Finances: </h2>
+<%	
 // print the otuput as many of the month(inputed in index.jsp)
 for(int i = 0; i<monthIndex; i++){ %>
 
-	<h2>Enter Your Finances: </h2>
 	
-	<% int monthidx = (bgnmonth+i)%12; //made the value stay between 0-11%>
+	<% int monthidx = (bgnmonth+i)%12; //made the value stay between 0-11
+		if(monthidx == 0){
+			monthidx = 12; //cahnge month idx to 12 if monthidx 0 whihc represent december
+		} %>
 	
 	<b><% out.print(getendmonth(monthidx)+" "+year);
 	 // + year every 12 month
-		if(monthidx == 0){
+		if(monthidx == 12){
 			year += 1;}%></b>
-		<table>
+		
+		<% //save date year and month to date.txt (date database)
+		String date = String.valueOf(monthidx) + String.valueOf(year);
+		save.addRecords(date+"\n");
+		%>
+		<table id="table1">
 			<tbody>
 			<tr>
 				<td>Income:</td>
@@ -89,7 +102,8 @@ for(int i = 0; i<monthIndex; i++){ %>
 
 			</tbody>
 		</table>
-	<% } %>
+	<% } //close for loop monthidx %>
+	<% save.closefile(); //close date.txt file %>
 	<input type="reset" value="Clear" name="clear">
 	<input type="submit" value="Submit" name="submit">
 	</form>

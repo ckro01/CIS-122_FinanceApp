@@ -210,9 +210,73 @@ for(int j = 0;j<monthindex; j++){
 			
 	</table>
 
-<b>Pie Chart</b>
+<b>Pie Chart</b><br/>
 <b>Search Feature</b>
+<%!public String getendmonth(int monthNum) {
+	String endmonth = "";
+	switch (monthNum) {
+	case 1:
+		endmonth = "January";
+		break;
+	case 2:
+		endmonth = "February";
+		break;
+	case 3:
+		endmonth = "March";
+		break;
+	case 4:
+		endmonth = "April";
+		break;
+	case 5:
+		endmonth = "May";
+		break;
+	case 6:
+		endmonth = "June";
+		break;
+	case 7:
+		endmonth = "July";
+		break;
+	case 8:
+		endmonth = "August";
+		break;
+	case 9:
+		endmonth = "September";
+		break;
+	case 10:
+		endmonth = "Ocotober";
+		break;
+	case 11:
+		endmonth = "November";
+		break;
+	case 0:
+		endmonth = "December";
+		break;
+	default:
+		endmonth = "Missing Month";
+	}
+	return endmonth;
+} %>
+<% //convert date to readable String
+String[] datestr = new String[datelist.size()];
+int dindex = 0;
+for(int d : datelist){
+	int month = d/10000;
+	String year = String.valueOf(d%10000);
+	String monthstr = getendmonth(month);
+	datestr[dindex] = (monthstr + " " + year);
+	dindex++;
+}
+	%>
+<form action="searched.jsp" method="post">
+<b>View</b><select name="search">
+						<%for(int i=0;i<datestr.length;i++){ %>
+						<option value=<% out.print(i); %>><% out.print(datestr[i]); %></option>
+						<% } %>
+					</select>
+					<input type="submit" value="view" name="submit">
+</form>
 <b><% //totalexp %></b>
+<br/>
 <form action="sort.jsp" method="post">
 <b>View data, Sort by</b><select name="sortoption">
 						<option value=1>High to low expense</option>
@@ -220,7 +284,7 @@ for(int j = 0;j<monthindex; j++){
 						<option value=3>High to low income</option>
 						<option value=4>low to High income</option>
 					</select>
-<input type="submit" value="Submit" name="submit">
+<input type="submit" value="sort" name="submit">
 </form>
 </body>
 </html>

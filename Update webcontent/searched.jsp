@@ -102,13 +102,17 @@ h3 {
 			alldata[i][6] = Integer.parseInt(String.valueOf(totalexpense));
 		}
 	
-int user = Integer.parseInt(request.getParameter("search")); //gett user input
-
+String userM = request.getParameter("Month"); //gett user input
+String userY = request.getParameter("Year");
+String userD = userM + userY; 
 //search
 search search = new search();
-int searchedvalue = alldata[user][0];
+int searchedvalue = Integer.parseInt(userD);
 int[] searchedData = search.recursionSearch(alldata, searchedvalue, 0, 7, 0);
 
+
+//if element found
+if(searchedData[0] != 0){
 
 //fix date ex.(Jan 2020)
 			int MonthYear = searchedvalue;
@@ -116,7 +120,7 @@ int[] searchedData = search.recursionSearch(alldata, searchedvalue, 0, 7, 0);
 			int year = MonthYear % 10000; //get year
 			String monthstr = getendmonth(month);
 			String dateCombine = monthstr + " " + String.valueOf(year);
-		//print out
+//print out
 	%>
 	<table border="1">
 		<tbody>
@@ -150,6 +154,17 @@ int[] searchedData = search.recursionSearch(alldata, searchedvalue, 0, 7, 0);
 			</tr>
 		</tbody>
 	</table>
-	<br />
+<% }
+else{ %>
+	<b>Data is not found</b>
+<% }
+%>
+<form>
+<table>
+<tr><td>
+<input type=button value="Back" onCLick="history.back()">
+</td></tr>
+</table>
+</form>
 </body>
 </html>

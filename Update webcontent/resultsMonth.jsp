@@ -207,11 +207,9 @@ for(int j = 0;j<monthindex; j++){
 				<td>Total Money left After tax</td>
 				<td><%=moneyleft %></td>
 			</tr>
-			
 	</table>
 
 <b>Pie Chart</b><br/>
-<b>Search Feature</b>
 <%!public String getendmonth(int monthNum) {
 	String endmonth = "";
 	switch (monthNum) {
@@ -268,12 +266,9 @@ for(int d : datelist){
 }
 	%>
 <form action="searched.jsp" method="post">
-<b>View</b><select name="search">
-						<%for(int i=0;i<datestr.length;i++){ %>
-						<option value=<% out.print(i); %>><% out.print(datestr[i]); %></option>
-						<% } %>
-					</select>
-					<input type="submit" value="view" name="submit">
+<b>View your financial data</b>
+<input type="number" name="Month" value="" placeholder="MM" size="3" /><input type="number" name="Year" value="" placeholder="YYYY" size="5" />
+<input type="submit" value="submit" name="View">
 </form>
 <b><% //totalexp %></b>
 <br/>
@@ -284,7 +279,7 @@ for(int d : datelist){
 						<option value=3>High to low income</option>
 						<option value=4>low to High income</option>
 					</select>
-<input type="submit" value="sort" name="submit">
+<input type="submit" value="submit" name="Sort">
 </form>
 </body>
 </html>

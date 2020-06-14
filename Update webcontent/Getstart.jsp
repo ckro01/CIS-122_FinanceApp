@@ -35,10 +35,17 @@ h3 {
 			<option value=10>October</option>
 			<option value=11>November</option>
 			<option value=12>December</option>
-		</select> <b>Year: </b><input type="number" name="year" size="5" value="2020">
+		</select> <b>Year: </b><input type="number" name="year" size="5" value="2020"><br/>
 		<b>"Enter state tax rate"</b><input type="number" name="tax" value="10" size="5" />%
 		<br /> <input type="reset" value="Clear" name="clear"> <input
 			type="submit" value="Submit" name="submit">
 	</form>
 </body>
+<form>
+<table>
+<tr><td>
+<input type=button value="Back" onCLick="history.back()">
+</td></tr>
+</table>
+</form>
 </html>

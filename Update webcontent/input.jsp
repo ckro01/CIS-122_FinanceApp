@@ -148,5 +148,12 @@ h3 {
 		<input type="reset" value="Clear" name="clear"> <input
 			type="submit" value="Submit" name="submit">
 	</form>
+<form>
+<table>
+<tr><td>
+<input type=button value="Back" onCLick="history.back()">
+</td></tr>
+</table>
+</form>
 </body>
 </html>

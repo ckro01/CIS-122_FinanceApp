@@ -329,11 +329,468 @@ return endmonth;
 					</tr>
 				</tbody>
 			</table>
+			<br/>
+			<%
+	}
+	}
+	else if(user == 5){
+		%>
+		<b>Sort by rent expenses form Highest to lowest</b>
+		<%
+		//sort income Lowest to Highest
+				int col = 3; //rent column
+				sort.sortbyColumnHtoL(alldata, col - 1); //sort
+
+				//fix date ex.(Jan 2020)
+				String[] newdate = new String[alldata.length];
+				for (int date = 0; date < alldata.length; date++) {
+					int MonthYear = alldata[date][0];
+					int month = MonthYear / 10000; //get month
+					int year = MonthYear % 10000; //get year
+					String monthstr = getendmonth(month);
+					String dateCombine = monthstr + " " + String.valueOf(year);
+					newdate[date] = dateCombine;
+				}
+				//print out
+				for (int row = 0; row < alldata.length; row++) {
+			%>
+			<table border="1">
+				<tbody>
+					<tr>
+						<td>Date</td>
+						<td><%=newdate[row]%></td>
+					</tr>
+					<tr>
+						<td>Income:</td>
+						<td><%=alldata[row][1]%></td>
+					</tr>
+					<tr>
+						<td>Total Expense:</td>
+						<td><%=alldata[row][6]%></td>
+					</tr>
+					<tr>
+						<td>Rent:</td>
+						<td><%=alldata[row][2]%></td>
+					</tr>
+					<tr>
+						<td>Cost of Food:</td>
+						<td><%=alldata[row][3]%></td>
+					</tr>
+					<tr>
+						<td>Cost of Entertainment:</td>
+						<td><%=alldata[row][4]%></td>
+					</tr>
+					<tr>
+						<td>Other Expenses:</td>
+						<td><%=alldata[row][5]%></td>
+					</tr>
+				</tbody>
+			</table>
+			<br />
+			<%
+	}
+	}
+	else if(user == 6){
+		%>
+		<b>Sort by rent expense form Lowest to Highest</b>
+		<%
+		//sort income Lowest to Highest
+				int col = 3; //rent column
+				sort.sortbyColumnLtoH(alldata, col - 1); //sort
+
+				//fix date ex.(Jan 2020)
+				String[] newdate = new String[alldata.length];
+				for (int date = 0; date < alldata.length; date++) {
+					int MonthYear = alldata[date][0];
+					int month = MonthYear / 10000; //get month
+					int year = MonthYear % 10000; //get year
+					String monthstr = getendmonth(month);
+					String dateCombine = monthstr + " " + String.valueOf(year);
+					newdate[date] = dateCombine;
+				}
+				//print out
+				for (int row = 0; row < alldata.length; row++) {
+			%>
+			<table border="1">
+				<tbody>
+					<tr>
+						<td>Date</td>
+						<td><%=newdate[row]%></td>
+					</tr>
+					<tr>
+						<td>Income:</td>
+						<td><%=alldata[row][1]%></td>
+					</tr>
+					<tr>
+						<td>Total Expense:</td>
+						<td><%=alldata[row][6]%></td>
+					</tr>
+					<tr>
+						<td>Rent:</td>
+						<td><%=alldata[row][2]%></td>
+					</tr>
+					<tr>
+						<td>Cost of Food:</td>
+						<td><%=alldata[row][3]%></td>
+					</tr>
+					<tr>
+						<td>Cost of Entertainment:</td>
+						<td><%=alldata[row][4]%></td>
+					</tr>
+					<tr>
+						<td>Other Expenses:</td>
+						<td><%=alldata[row][5]%></td>
+					</tr>
+				</tbody>
+			</table>
+			<br />
+			<%
+	}
+	}
+		else if(user == 7){
+		%>
+		<b>Sort by food expenses form Highest to lowest</b>
+		<%
+		//sort income Lowest to Highest
+				int col = 4; //food column
+				sort.sortbyColumnHtoL(alldata, col - 1); //sort
+
+				//fix date ex.(Jan 2020)
+				String[] newdate = new String[alldata.length];
+				for (int date = 0; date < alldata.length; date++) {
+					int MonthYear = alldata[date][0];
+					int month = MonthYear / 10000; //get month
+					int year = MonthYear % 10000; //get year
+					String monthstr = getendmonth(month);
+					String dateCombine = monthstr + " " + String.valueOf(year);
+					newdate[date] = dateCombine;
+				}
+				//print out
+				for (int row = 0; row < alldata.length; row++) {
+			%>
+			<table border="1">
+				<tbody>
+					<tr>
+						<td>Date</td>
+						<td><%=newdate[row]%></td>
+					</tr>
+					<tr>
+						<td>Income:</td>
+						<td><%=alldata[row][1]%></td>
+					</tr>
+					<tr>
+						<td>Total Expense:</td>
+						<td><%=alldata[row][6]%></td>
+					</tr>
+					<tr>
+						<td>Rent:</td>
+						<td><%=alldata[row][2]%></td>
+					</tr>
+					<tr>
+						<td>Cost of Food:</td>
+						<td><%=alldata[row][3]%></td>
+					</tr>
+					<tr>
+						<td>Cost of Entertainment:</td>
+						<td><%=alldata[row][4]%></td>
+					</tr>
+					<tr>
+						<td>Other Expenses:</td>
+						<td><%=alldata[row][5]%></td>
+					</tr>
+				</tbody>
+			</table>
+			<br />
+			<%
+	}
+	}
+	else if(user == 8){
+		%>
+		<b>Sort by food expense form Lowest to Highest</b>
+		<%
+		//sort income Lowest to Highest
+				int col = 4; //food column
+				sort.sortbyColumnLtoH(alldata, col - 1); //sort
+
+				//fix date ex.(Jan 2020)
+				String[] newdate = new String[alldata.length];
+				for (int date = 0; date < alldata.length; date++) {
+					int MonthYear = alldata[date][0];
+					int month = MonthYear / 10000; //get month
+					int year = MonthYear % 10000; //get year
+					String monthstr = getendmonth(month);
+					String dateCombine = monthstr + " " + String.valueOf(year);
+					newdate[date] = dateCombine;
+				}
+				//print out
+				for (int row = 0; row < alldata.length; row++) {
+			%>
+			<table border="1">
+				<tbody>
+					<tr>
+						<td>Date</td>
+						<td><%=newdate[row]%></td>
+					</tr>
+					<tr>
+						<td>Income:</td>
+						<td><%=alldata[row][1]%></td>
+					</tr>
+					<tr>
+						<td>Total Expense:</td>
+						<td><%=alldata[row][6]%></td>
+					</tr>
+					<tr>
+						<td>Rent:</td>
+						<td><%=alldata[row][2]%></td>
+					</tr>
+					<tr>
+						<td>Cost of Food:</td>
+						<td><%=alldata[row][3]%></td>
+					</tr>
+					<tr>
+						<td>Cost of Entertainment:</td>
+						<td><%=alldata[row][4]%></td>
+					</tr>
+					<tr>
+						<td>Other Expenses:</td>
+						<td><%=alldata[row][5]%></td>
+					</tr>
+				</tbody>
+			</table>
+			<br />
+			<%
+	}
+	}
+		else if(user == 9){
+		%>
+		<b>Sort by entertainment expenses form Highest to lowest</b>
+		<%
+		//sort income Lowest to Highest
+				int col = 5; //entertainment column
+				sort.sortbyColumnHtoL(alldata, col - 1); //sort
+
+				//fix date ex.(Jan 2020)
+				String[] newdate = new String[alldata.length];
+				for (int date = 0; date < alldata.length; date++) {
+					int MonthYear = alldata[date][0];
+					int month = MonthYear / 10000; //get month
+					int year = MonthYear % 10000; //get year
+					String monthstr = getendmonth(month);
+					String dateCombine = monthstr + " " + String.valueOf(year);
+					newdate[date] = dateCombine;
+				}
+				//print out
+				for (int row = 0; row < alldata.length; row++) {
+			%>
+			<table border="1">
+				<tbody>
+					<tr>
+						<td>Date</td>
+						<td><%=newdate[row]%></td>
+					</tr>
+					<tr>
+						<td>Income:</td>
+						<td><%=alldata[row][1]%></td>
+					</tr>
+					<tr>
+						<td>Total Expense:</td>
+						<td><%=alldata[row][6]%></td>
+					</tr>
+					<tr>
+						<td>Rent:</td>
+						<td><%=alldata[row][2]%></td>
+					</tr>
+					<tr>
+						<td>Cost of Food:</td>
+						<td><%=alldata[row][3]%></td>
+					</tr>
+					<tr>
+						<td>Cost of Entertainment:</td>
+						<td><%=alldata[row][4]%></td>
+					</tr>
+					<tr>
+						<td>Other Expenses:</td>
+						<td><%=alldata[row][5]%></td>
+					</tr>
+				</tbody>
+			</table>
+			<br />
+			<%
+	}
+	}
+	else if(user == 10){
+		%>
+		<b>Sort by entertainment expense form Lowest to Highest</b>
+		<%
+		//sort income Lowest to Highest
+				int col = 5; //income column
+				sort.sortbyColumnLtoH(alldata, col - 1); //sort
+
+				//fix date ex.(Jan 2020)
+				String[] newdate = new String[alldata.length];
+				for (int date = 0; date < alldata.length; date++) {
+					int MonthYear = alldata[date][0];
+					int month = MonthYear / 10000; //get month
+					int year = MonthYear % 10000; //get year
+					String monthstr = getendmonth(month);
+					String dateCombine = monthstr + " " + String.valueOf(year);
+					newdate[date] = dateCombine;
+				}
+				//print out
+				for (int row = 0; row < alldata.length; row++) {
+			%>
+			<table border="1">
+				<tbody>
+					<tr>
+						<td>Date</td>
+						<td><%=newdate[row]%></td>
+					</tr>
+					<tr>
+						<td>Income:</td>
+						<td><%=alldata[row][1]%></td>
+					</tr>
+					<tr>
+						<td>Total Expense:</td>
+						<td><%=alldata[row][6]%></td>
+					</tr>
+					<tr>
+						<td>Rent:</td>
+						<td><%=alldata[row][2]%></td>
+					</tr>
+					<tr>
+						<td>Cost of Food:</td>
+						<td><%=alldata[row][3]%></td>
+					</tr>
+					<tr>
+						<td>Cost of Entertainment:</td>
+						<td><%=alldata[row][4]%></td>
+					</tr>
+					<tr>
+						<td>Other Expenses:</td>
+						<td><%=alldata[row][5]%></td>
+					</tr>
+				</tbody>
+			</table>
+			<br />
+			<%
+	}
+	}
+	else if(user == 11){
+		%>
+		<b>Sort by other expenses form Highest to lowest</b>
+		<%
+		//sort income Lowest to Highest
+				int col = 6; //other column
+				sort.sortbyColumnHtoL(alldata, col - 1); //sort
+
+				//fix date ex.(Jan 2020)
+				String[] newdate = new String[alldata.length];
+				for (int date = 0; date < alldata.length; date++) {
+					int MonthYear = alldata[date][0];
+					int month = MonthYear / 10000; //get month
+					int year = MonthYear % 10000; //get year
+					String monthstr = getendmonth(month);
+					String dateCombine = monthstr + " " + String.valueOf(year);
+					newdate[date] = dateCombine;
+				}
+				//print out
+				for (int row = 0; row < alldata.length; row++) {
+			%>
+			<table border="1">
+				<tbody>
+					<tr>
+						<td>Date</td>
+						<td><%=newdate[row]%></td>
+					</tr>
+					<tr>
+						<td>Income:</td>
+						<td><%=alldata[row][1]%></td>
+					</tr>
+					<tr>
+						<td>Total Expense:</td>
+						<td><%=alldata[row][6]%></td>
+					</tr>
+					<tr>
+						<td>Rent:</td>
+						<td><%=alldata[row][2]%></td>
+					</tr>
+					<tr>
+						<td>Cost of Food:</td>
+						<td><%=alldata[row][3]%></td>
+					</tr>
+					<tr>
+						<td>Cost of Entertainment:</td>
+						<td><%=alldata[row][4]%></td>
+					</tr>
+					<tr>
+						<td>Other Expenses:</td>
+						<td><%=alldata[row][5]%></td>
+					</tr>
+				</tbody>
+			</table>
+			<br />
+			<%
+	}
+	}
+	else if(user == 12){
+		%>
+		<b>Sort by other expense form Lowest to Highest</b>
+		<%
+		//sort income Lowest to Highest
+				int col = 6; //other column
+				sort.sortbyColumnLtoH(alldata, col - 1); //sort
+
+				//fix date ex.(Jan 2020)
+				String[] newdate = new String[alldata.length];
+				for (int date = 0; date < alldata.length; date++) {
+					int MonthYear = alldata[date][0];
+					int month = MonthYear / 10000; //get month
+					int year = MonthYear % 10000; //get year
+					String monthstr = getendmonth(month);
+					String dateCombine = monthstr + " " + String.valueOf(year);
+					newdate[date] = dateCombine;
+				}
+				//print out
+				for (int row = 0; row < alldata.length; row++) {
+			%>
+			<table border="1">
+				<tbody>
+					<tr>
+						<td>Date</td>
+						<td><%=newdate[row]%></td>
+					</tr>
+					<tr>
+						<td>Income:</td>
+						<td><%=alldata[row][1]%></td>
+					</tr>
+					<tr>
+						<td>Total Expense:</td>
+						<td><%=alldata[row][6]%></td>
+					</tr>
+					<tr>
+						<td>Rent:</td>
+						<td><%=alldata[row][2]%></td>
+					</tr>
+					<tr>
+						<td>Cost of Food:</td>
+						<td><%=alldata[row][3]%></td>
+					</tr>
+					<tr>
+						<td>Cost of Entertainment:</td>
+						<td><%=alldata[row][4]%></td>
+					</tr>
+					<tr>
+						<td>Other Expenses:</td>
+						<td><%=alldata[row][5]%></td>
+					</tr>
+				</tbody>
+			</table>
 			<br />
 			<%
 	}
 	}
 	%>
+
 <!-- Back Button -->
 <form>
 <table>

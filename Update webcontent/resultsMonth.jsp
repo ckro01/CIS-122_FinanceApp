@@ -159,8 +159,13 @@ for(int j = 0;j<monthindex; j++){
 	//total money left after tax
 	int moneyleftAftertax = totalincomeAftertax - totalexpense;
 %>
-
-<table id="table1">
+<b> Your Financial Data </b>
+<table id="table1" style="width: 30%">
+ <colgroup>
+       <col span="1" style="width: 20%;">
+       <col span="1" style="width: 10%;">
+    </colgroup>
+    
 		<tbody>
 			<tr>
 				<td>Average Income:</td>
@@ -189,10 +194,14 @@ for(int j = 0;j<monthindex; j++){
 			</tbody>
 			
 	</table>
-	<table id="table2">
+	<table id="table2" style="width: 30%">
+	<colgroup>
+       <col span="1" style="width: 20%;">
+       <col span="1" style="width: 10%;">
+    </colgroup>
 		<tbody>
 			<tr>
-				<td>total income After tax:</td>
+				<td>Total income After tax:</td>
 				<td><%=totalincomeAftertax %></td>
 			</tr>
 			<tr>
@@ -278,8 +287,23 @@ for(int d : datelist){
 						<option value=2>Low to High expense</option>
 						<option value=3>High to low income</option>
 						<option value=4>low to High income</option>
+						<option value=5>High to low rent expense</option>
+						<option value=6>low to High rent expense</option>
+						<option value=7>High to low food expense</option>
+						<option value=8>low to High food expense</option>
+						<option value=9>High to low entertainment expense</option>
+						<option value=10>low to High entertainment expense</option>
+						<option value=11>High to low other expense</option>
+						<option value=12>low to High other expense</option>
 					</select>
 <input type="submit" value="submit" name="Sort">
+<form>
+<table>
+<tr><td>
+<input type=button value="Back" onCLick="history.back()">
+</td></tr>
+</table>
+</form>
 </form>
 </body>
 </html>

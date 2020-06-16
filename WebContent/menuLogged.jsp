@@ -15,7 +15,7 @@
 			<div class="content">
 				<h1>CIS 122 Money Management</h1>
 				<div class="btn-group" style="width: 100%">
-					<button><a class="btn" style="width: 25%" href="input.jsp">Get Started</a></button>
+					<button><a class="btn" style="width: 25%" href="Getstart.jsp">Get Started</a></button>
 					<button><a class="btn" style="width: 25%" href="logout.jsp">Log Out</a></button>
 					<button><a class="btn" style="width: 25%" href="HTML/About.html">About</a></button>
 					<button><a class="btn" style="width: 25%" href="HTML/help.html">Contact</a></button>

@@ -212,57 +212,17 @@ for(int j = 0;j<monthindex; j++){
 	</table>
 <br>
 <b>Pie Chart: </b><br/><br>
-<%!public String getendmonth(int monthNum) {
-	String endmonth = "";
-	switch (monthNum) {
-	case 1:
-		endmonth = "January";
-		break;
-	case 2:
-		endmonth = "February";
-		break;
-	case 3:
-		endmonth = "March";
-		break;
-	case 4:
-		endmonth = "April";
-		break;
-	case 5:
-		endmonth = "May";
-		break;
-	case 6:
-		endmonth = "June";
-		break;
-	case 7:
-		endmonth = "July";
-		break;
-	case 8:
-		endmonth = "August";
-		break;
-	case 9:
-		endmonth = "September";
-		break;
-	case 10:
-		endmonth = "Ocotober";
-		break;
-	case 11:
-		endmonth = "November";
-		break;
-	case 0:
-		endmonth = "December";
-		break;
-	default:
-		endmonth = "Missing Month";
-	}
-	return endmonth;
-} %>
+<%@ page import = "help.MonthConvert" %>
 <% //convert date to readable String
+//call the convert Month from user input to String(jan, Feb, ..)
+	MonthConvert MC = new MonthConvert();
+
 String[] datestr = new String[datelist.size()];
 int dindex = 0;
 for(int d : datelist){
 	int month = d/10000;
 	String year = String.valueOf(d%10000);
-	String monthstr = getendmonth(month);
+	String monthstr = MC.getendmonth(month);
 	datestr[dindex] = (monthstr + " " + year);
 	dindex++;
 }

@@ -29,5 +29,21 @@ public class sort {
                 arr[i] = smallerNumber;
             }
         }
+        public void Datesort(int arr[][], int col, int end)
+        {
+            int[] temp = new int[col];
+            int start = 0;
+
+            while (start < end)
+            {
+                for(int i=0; i<col; i++) {
+                    temp[i] =arr[start][i];
+                    arr[start][i]=arr[end][i];
+                    arr[end][i] =temp[i];
+                }
+                    start++;
+                    end--;
+                }
+        }
 }
             

@@ -9,7 +9,7 @@
 <%@page import="java.net.URL"%>
 <%@page import="java.io.FileReader"%>
 <%@ page import="help.printfile"%>
-<%@ page import="help.search" %>
+<%@ page import="help.search, help.MonthConvert" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -29,51 +29,7 @@ h3 {
  <div align="center" style="margin-top: 50px;">
 </head>
 <body>
-		<%!//to change the value of month from number to string month(Jan, Feb, ...)
-	public String getendmonth(int monthNum) {
-		String endmonth = "";
-		switch (monthNum) {
-		case 1:
-			endmonth = "January";
-			break;
-		case 2:
-			endmonth = "February";
-			break;
-		case 3:
-			endmonth = "March";
-			break;
-		case 4:
-			endmonth = "April";
-			break;
-		case 5:
-			endmonth = "May";
-			break;
-		case 6:
-			endmonth = "June";
-			break;
-		case 7:
-			endmonth = "July";
-			break;
-		case 8:
-			endmonth = "August";
-			break;
-		case 9:
-			endmonth = "September";
-			break;
-		case 10:
-			endmonth = "Ocotober";
-			break;
-		case 11:
-			endmonth = "November";
-			break;
-		case 0:
-			endmonth = "December";
-			break;
-		default:
-			endmonth = "Missing Month";
-		}
-		return endmonth;
-	}%>
+
 <% 
 //get the data from alldata.txt and store it to datelist
 	ArrayList<String> datalist = new ArrayList<String>();
@@ -116,12 +72,10 @@ int[] searchedData = search.recursionSearch(alldata, searchedvalue, 0, 7, 0);
 //if element found
 if(searchedData[0] != 0){
 
-//fix date ex.(Jan 2020)
-			int MonthYear = searchedvalue;
-			int month = MonthYear / 10000; //get month
-			int year = MonthYear % 10000; //get year
-			String monthstr = getendmonth(month);
-			String dateCombine = monthstr + " " + String.valueOf(year);
+	//fix date ex.(Jan 2020)
+	MonthConvert MC = new MonthConvert();
+	String[] dateCombine = MC.dateCon(alldata);
+			
 //print out
 	%>
 	<h3>Search Results: </h3>
@@ -129,7 +83,7 @@ if(searchedData[0] != 0){
 		<tbody>
 			<tr>
 				<td>Date</td>
-				<td><%=dateCombine%></td>
+				<td><%=dateCombine[0]%></td>
 			</tr>
 			<tr>
 				<td>Income:</td>

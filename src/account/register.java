@@ -21,7 +21,7 @@ public class register extends HttpServlet {
 		String first_name = request.getParameter("first");
 		String last_name = request.getParameter("last");
 		String username = request.getParameter("username");
-		String password = request.getParameter("password");
+		String password = request.getParameter("pass");
 		String address = request.getParameter("address");
 		String contact = request.getParameter("phone");
 		String isEmployed = request.getParameter("employed");

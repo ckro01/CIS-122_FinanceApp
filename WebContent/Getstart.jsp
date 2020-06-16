@@ -26,7 +26,7 @@ h3 {
 			<tbody>
 			<tr>
 			<td>How Many Months Do You Have Information For: </td>
-			<td><input type="number" name="MonthIndex" size="2"> </td>
+			<td><input type="number" name="MonthIndex" size="2" min="0"> </td>
 			</tr>
 			<tr>
 			<td>Starting Month: </td> 

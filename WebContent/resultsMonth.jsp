@@ -295,6 +295,8 @@ for(int d : datelist){
 						<option value=10>low to High entertainment expense</option>
 						<option value=11>High to low other expense</option>
 						<option value=12>low to High other expense</option>
+						<option value=13>Date modified ascending</option>
+						<option value=14>Date modified descending</option>
 					</select>
 <input type="submit" value="submit" name="Sort">
 <form>

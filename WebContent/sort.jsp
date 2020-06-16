@@ -788,8 +788,107 @@ return endmonth;
 			<br />
 			<%
 	}
-	}
+	} else if(user == 13){
+		//fix date ex.(Jan 2020)
+		String[] newdate = new String[alldata.length];
+		for (int date = 0; date < alldata.length; date++) {
+			int MonthYear = alldata[date][0];
+			int month = MonthYear / 10000; //get month
+			int year = MonthYear % 10000; //get year
+			String monthstr = getendmonth(month);
+			String dateCombine = monthstr + " " + String.valueOf(year);
+			newdate[date] = dateCombine;
+		}
+		//print out
+		for (int row = 0; row < alldata.length; row++) {
 	%>
+	<table border="1">
+		<tbody>
+			<tr>
+				<td>Date</td>
+				<td><%=newdate[row]%></td>
+			</tr>
+			<tr>
+				<td>Income:</td>
+				<td><%=alldata[row][1]%></td>
+			</tr>
+			<tr>
+				<td>Total Expense:</td>
+				<td><%=alldata[row][6]%></td>
+			</tr>
+			<tr>
+				<td>Rent:</td>
+				<td><%=alldata[row][2]%></td>
+			</tr>
+			<tr>
+				<td>Cost of Food:</td>
+				<td><%=alldata[row][3]%></td>
+			</tr>
+			<tr>
+				<td>Cost of Entertainment:</td>
+				<td><%=alldata[row][4]%></td>
+			</tr>
+			<tr>
+				<td>Other Expenses:</td>
+				<td><%=alldata[row][5]%></td>
+			</tr>
+		</tbody>
+	</table>
+	<br />
+	<% 
+	}
+} else if(user == 14){
+	//sort by dat latest to erliest 
+	
+	//fix date ex.(Jan 2020)
+	String[] newdate = new String[alldata.length];
+	for (int date = 0; date < alldata.length; date++) {
+		int MonthYear = alldata[date][0];
+		int month = MonthYear / 10000; //get month
+		int year = MonthYear % 10000; //get year
+		String monthstr = getendmonth(month);
+		String dateCombine = monthstr + " " + String.valueOf(year);
+		newdate[date] = dateCombine;
+	}
+	//print out
+	for (int row = alldata.length-1; row > 0; row--) {
+%>
+<table border="1">
+	<tbody>
+		<tr>
+			<td>Date</td>
+			<td><%=newdate[row]%></td>
+		</tr>
+		<tr>
+			<td>Income:</td>
+			<td><%=alldata[row][1]%></td>
+		</tr>
+		<tr>
+			<td>Total Expense:</td>
+			<td><%=alldata[row][6]%></td>
+		</tr>
+		<tr>
+			<td>Rent:</td>
+			<td><%=alldata[row][2]%></td>
+		</tr>
+		<tr>
+			<td>Cost of Food:</td>
+			<td><%=alldata[row][3]%></td>
+		</tr>
+		<tr>
+			<td>Cost of Entertainment:</td>
+			<td><%=alldata[row][4]%></td>
+		</tr>
+		<tr>
+			<td>Other Expenses:</td>
+			<td><%=alldata[row][5]%></td>
+		</tr>
+	</tbody>
+</table>
+<br />
+<% }
+	}%>
+
 
 <!-- Back Button -->
 <form>

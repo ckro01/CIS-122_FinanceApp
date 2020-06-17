@@ -37,7 +37,8 @@ h3 {
 
 			<%
 				//get value of Month and Year from index.jsp
-			int monthIndex = Integer.parseInt(request.getParameter("MonthIndex"));
+			int monthIndex = 1;
+			monthIndex = Integer.parseInt(request.getParameter("MonthIndex"));
 			int year = Integer.parseInt(request.getParameter("year"));
 			// print the otuput as many of the month(inputed in index.jsp)
 			%>
@@ -81,28 +82,28 @@ h3 {
 				<tbody>
 					<tr>
 						<td>Income:</td>
-						<td><input type="number" name=<%out.print("income" + i);%>
-							value="" size="20" /></td>
+						<td><input type="number" step="0.01" name=<%out.print("income" + i);%>
+							value="" size="20" required/></td>
 					</tr>
 					<tr>
 						<td>Rent:</td>
-						<td><input type="number" name=<%out.print("rent" + i);%>
-							value="" size="20" /></td>
+						<td><input type="number" step="0.01" name=<%out.print("rent" + i);%>
+							value="" size="20" required/></td>
 					</tr>
 					<tr>
 						<td>Cost of food:</td>
-						<td><input type="number" name=<%out.print("food" + i);%>
-							value="" size="20" /></td>
+						<td><input type="number" step="0.01" name=<%out.print("food" + i);%>
+							value="" size="20" required/></td>
 					</tr>
 					<tr>
 						<td>Cost of entertainment:</td>
-						<td><input type="number" name=<%out.print("ent" + i);%>
-							value="" size="20" /></td>
+						<td><input type="number" step="0.01" name=<%out.print("ent" + i);%>
+							value="" size="20" required/></td>
 					</tr>
 					<tr>
 						<td>Other expenses:</td>
-						<td><input type="number" name=<%out.print("other" + i);%>
-							value="" size="20" /></td>
+						<td><input type="number" step="0.01" name=<%out.print("other" + i);%>
+							value="" size="20" required/></td>
 					</tr>
 
 				</tbody>

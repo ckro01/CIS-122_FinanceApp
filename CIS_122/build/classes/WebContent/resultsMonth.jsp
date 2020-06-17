@@ -169,49 +169,45 @@ for(int j = 0;j<monthindex; j++){
 				<td><%=avgincome %></td>
 			</tr>
 			<tr>
-				<td>Average Total expense</td>
+				<td>Average Total Expenses: </td>
 				<td><%=avgexpense %></td>
 			</tr>
 			<tr>
-				<td>Average money leftover</td>
+				<td>Average Money Leftover: </td>
 				<td><%=avgmoneyleft %></td>
 			</tr>
 			<tr>
-				<td>Total Money left</td>
+				<td>Total Money Left: </td>
 				<td><%=moneyleft %></td>
 			</tr>
 			<tr>
-				<td>Total income</td>
+				<td>Total Income: </td>
 				<td><%=totalincome %></td>
 			</tr>
 			<tr>
-				<td>Total Expense</td>
+				<td>Total Expenses: </td>
 				<td><%=moneyleftAftertax %></td>
 			</tr>
-			</tbody>
-			
-	</table>
-	<table>
-		<tbody>
 			<tr>
-				<td>Total income After tax:</td>
+				<td>Total Income After Tax:</td>
 				<td><%=totalincomeAftertax %></td>
 			</tr>
 			<tr>
-				<td>Average income After tax</td>
+				<td>Average Income After Tax: </td>
 				<td><%=avgincomeAfterTax %></td>
 			</tr>
 			<tr>
-				<td>Average money leftover After tax</td>
+				<td>Average Money leftover After Tax: </td>
 				<td><%=avgmoneyleftAftertax %></td>
 			</tr>
 			<tr>
-				<td>Total Money left After tax</td>
+				<td>Total Money Left After Tax: </td>
 				<td><%=moneyleft %></td>
 			</tr>
+			</tbody>
 	</table>
 <br>
-<b>Pie Chart: </b><br/><br>
+<b>Data Viewing: </b><br/><br>
 <%@ page import = "help.MonthConvert" %>
 <% //convert date to readable String
 //call the convert Month from user input to String(jan, Feb, ..)
@@ -228,37 +224,44 @@ for(int d : datelist){
 }
 	%>
 <form action="searched.jsp" method="post">
-<b>View your financial data</b>
+<table>
+<tbody>
+<tr>
+<th>Search for a certain month: </th><th>
 <input type="number" name="Month" value="" placeholder="MM" size="3" /><input type="number" name="Year" value="" placeholder="YYYY" size="5" />
 <input type="submit" value="submit" name="View">
-</form>
-<b><% //totalexp %></b>
-<br/>
-<form action="sort.jsp" method="post">
-<b>View data, Sort by</b><select name="sortoption">
-						<option value=1>High to low expense</option>
-						<option value=2>Low to High expense</option>
-						<option value=3>High to low income</option>
-						<option value=4>low to High income</option>
-						<option value=5>High to low rent expense</option>
-						<option value=6>low to High rent expense</option>
-						<option value=7>High to low food expense</option>
-						<option value=8>low to High food expense</option>
-						<option value=9>High to low entertainment expense</option>
-						<option value=10>low to High entertainment expense</option>
-						<option value=11>High to low other expense</option>
-						<option value=12>low to High other expense</option>
-						<option value=13>Date modified ascending</option>
-						<option value=14>Date modified descending</option>
-					</select>
-<input type="submit" value="submit" name="Sort">
-<form>
-<table>
-<tr><td>
-<input type=button value="Back" onCLick="history.back()">
-</td></tr>
+</th>
+</tr>
+</tbody>
 </table>
 </form>
+<br/>
+<form action="sort.jsp" method="post">
+<table>
+<tr>
+<th>View Data, Sort By: </th><th><select name="sortoption">
+						<option value=1>High to Low Expenses</option>
+						<option value=2>Low to High Expenses</option>
+						<option value=3>High to Low Income</option>
+						<option value=4>Low to High Income</option>
+						<option value=5>High to Low Rent Expenses</option>
+						<option value=6>Low to High Rent Expenses</option>
+						<option value=7>High to Low Food Expenses</option>
+						<option value=8>Low to High Food Expenses</option>
+						<option value=9>High to Low Entertainment Expenses</option>
+						<option value=10>Low to High Entertainment Expenses</option>
+						<option value=11>High to Low Other Expenses</option>
+						<option value=12>Low to High Other Expenses</option>
+						<option value=13>Date Modified Ascending</option>
+						<option value=14>Date Modified Descending</option>
+					</select></th>
+<th><input type="submit" value="submit" name="Sort"></th>
+</tr>
+
+
+</table>
 </form>
+<input type=button value="Back" onCLick="history.back()">
+</div>
 </body>
 </html>

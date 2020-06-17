@@ -66,7 +66,7 @@ String userD = userM + userY;
 //search
 search search = new search();
 int searchedvalue = Integer.parseInt(userD);
-int[] searchedData = search.recursionSearch(alldata, searchedvalue, 0, 7, 0);
+int[] searchedData = search.recursionSearch(alldata, searchedvalue, 0, 7, 0); 
 
 
 //if element found

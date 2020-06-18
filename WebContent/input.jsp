@@ -25,58 +25,25 @@ h3 {
 	href="https://www.freepngimg.com/save/16268-java-png-image/64x64">
 </head>
 <body style="overflow: scroll">
-	<form name="monthForm" action="resultsMonth.jsp" method="post">
-		<%
-			int bgnmonth = Integer.parseInt(request.getParameter("month")); //total of month
-		%>
+	<form name="monthForm" action="saveInputData" method="post">
 
-		<% //call the convert Month from user input to String(jan, Feb, ..)
-		MonthConvert MC = new MonthConvert();%>
 		<div align="center" style="margin-top: 50px;">
 			<h2 align="center">Enter Your Finances:</h2>
 
 			<%
-				//get value of Month and Year from index.jsp
-			int monthIndex = 1;
-			monthIndex = Integer.parseInt(request.getParameter("MonthIndex"));
-			int year = Integer.parseInt(request.getParameter("year"));
-			// print the otuput as many of the month(inputed in index.jsp)
-			%>
-			<%@page import="help.printfile"%>
-			<%
-				//save the tax value
-			printfile filetax = new printfile();
-			filetax.openFile("tax.txt");
-			String taxrate = request.getParameter("tax");
-			filetax.addRecords(taxrate);
-			filetax.closefile();
-
-			//save the value of total month to MonthIndex.txt file
-			printfile save = new printfile();
-			save.openFile("MonthIndex.txt");
-			save.addRecords(String.valueOf(monthIndex));
-			save.closefile();
-			save.openFile("date.txt"); //open file for date(for date database)
-			%>
-			<%
-				for (int i = 0; i < monthIndex; i++) {
-				if (i == 5) {
-					out.print("<br>");
-				}
-				int monthidx = (bgnmonth + i) % 12; //made the value stay between 0-11
+				List<String> months = (List<String>)request.getAttribute("months");
+				int i = 0;
+				for(String s : months){
+					if (i == 5) {
+						out.print("<br>");
+					}
+					i++;
+					out.print(s + "\n");
+				
 			%>
 
-			<b> <%
- 	out.print(MC.getendmonth(monthidx) + " " + year + "\n");
- // + year every 12 month
- if (monthidx == 0) {
- 	year += 1;
- }
- %> <%
- 	//save date year and month to date.txt (date database)
- String date = String.valueOf(monthidx) + String.valueOf(year);
- save.addRecords(date + "\n");
- %>
+			<b> 
+			
 			</b>
 			<table id="table1">
 				<tbody>
@@ -111,9 +78,7 @@ h3 {
 			<%
 				}
 			%>
-			<%
-				save.closefile(); //close date.txt file
-			%>
+			<input type="hidden" value=<%out.print(months.size());%> name="monthsSize"></input>
 			<input type=button value="Back" onCLick="history.back()"> <input
 				type="reset" value="Clear" name="clear"> <input
 				type="submit" value="Submit" name="submit">

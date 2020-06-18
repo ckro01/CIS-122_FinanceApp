@@ -1,6 +1,9 @@
 package help;
 // creating a class MonthConvert
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class MonthConvert {
 	public String getendmonth(int monthNum) {
 		String endmonth = "";
@@ -60,4 +63,25 @@ public class MonthConvert {
 		}
 		return newdate;
 	}
+	
+	// Charith
+	//to change the value of month from number to string month(Jan, Feb, ...)
+		public Map<Integer, String> getMonthMap() {
+			Map<Integer, String> monthsMap = new HashMap<>();
+
+			monthsMap.put(1, "January");
+			monthsMap.put(2, "February");
+			monthsMap.put(3, "March");
+			monthsMap.put(4, "April");
+			monthsMap.put(5, "May");
+			monthsMap.put(6, "June");
+			monthsMap.put(7, "July");
+			monthsMap.put(8, "August");
+			monthsMap.put(9, "September");
+			monthsMap.put(10, "Ocotober");
+			monthsMap.put(11, "November");
+			monthsMap.put(0, "December");
+
+			return monthsMap;
+		}
 }

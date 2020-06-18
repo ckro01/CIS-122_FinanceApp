@@ -1,5 +1,19 @@
 # CIS-122_FinanceApp
-About this app:
+#Installation: 
+
+Download repository or import via github desktop app
+
+Import file into eclipse
+
+Run via eclipse on tomcat-apache
+
+localhost/CIS_122/ <--- Landing page
+
+#Alternative Method:
+
+Go to tomcat install/webapps, drop .war file inside and run after restarting tomcat server.
+
+#About this app:
 
 This program is designed to:
 

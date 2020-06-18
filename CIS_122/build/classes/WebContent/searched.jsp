@@ -83,7 +83,7 @@ if(searchedData[0] != 0){
 		<tbody>
 			<tr>
 				<td>Date</td>
-				<td><%=dateCombine[0]%></td>
+				<td><%=dateCombine[Integer.parseInt(userM)-1]%></td>
 			</tr>
 			<tr>
 				<td>Income:</td>

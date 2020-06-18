@@ -222,11 +222,12 @@ h3 {
 				</tr>
 			</tbody>
 		</table>
-		<input type=button value="Back" onCLick="history.back()">
-		<br />
 		<%
 			}
 		%>
+		<input type=button value="Back" onCLick="history.back()">
+		<br />
+		
 	</div>
 </body>
 </html>

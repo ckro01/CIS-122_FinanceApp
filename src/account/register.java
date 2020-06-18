@@ -15,10 +15,8 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/LoginCheck")
 public class register extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
     
      protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		String first_name = request.getParameter("first");
 		String last_name = request.getParameter("last");
 		String uName = request.getParameter("username");

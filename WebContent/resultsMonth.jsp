@@ -32,7 +32,7 @@ h3 {
 <%@page import = "java.util.ArrayList"%>
 <%@ page import="java.util.List" %>
 
-<%	
+<%	//Linked list time :)
     //get the data from MonthIndex and store it to int monthindex
 	ArrayList<Integer> index = new ArrayList<Integer>();
 	File file = new File("MonthIndex.txt");

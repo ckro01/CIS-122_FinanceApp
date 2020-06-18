@@ -1,7 +1,7 @@
 package account;
 
 public class AccountProcessor {
-
+//Fairly self explanatory, processor for the class "Account"
 	public double getAmountToSave(double income) {
 		return 0.2 * income;
 	}

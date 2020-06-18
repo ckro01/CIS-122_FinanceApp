@@ -1,5 +1,5 @@
 package account;
-
+//Backend created in the event that we had more time to create a fully fledged account system.
 public class Account {
 
 	private String fName;

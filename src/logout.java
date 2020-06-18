@@ -9,20 +9,15 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class login
  */
+//Information gathered from https://www.guru99.com/jsp-example.html
 @WebServlet("/logout")
 public class logout extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-
-	public logout() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
- 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+		// would set username and password to null, thus signifying the user is logged out, however with no database, is more of a placeholder.
 		String username = "null";
 		String password = "null";
-		{
+		{// redirect the user to the unloggedin menu
 			RequestDispatcher req = request.getRequestDispatcher("menu.jsp");
 			req.forward(request, response);
 		}

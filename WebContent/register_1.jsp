@@ -28,27 +28,27 @@ color: red;
 			<tbody>
 				<tr>
 					<td>First Name: </td>
-					<td><input type="text" name="first" /></td>
+					<td><input type="text" name="first" required/></td>
 				</tr>
 				<tr>
 					<td>Last Name: </td>
-					<td><input type="text" name="last" /></td>
+					<td><input type="text" name="last" required/></td>
 				</tr>
 				<tr>
 					<td>UserName: </td>
-					<td><input type="text" name="username" /></td>
+					<td><input type="text" name="username" required/></td>
 				</tr>
 					<tr>
 					<td>Password: </td>
-					<td><input type="password" name="pass" /></td>
+					<td><input type="password" name="pass" required/></td>
 				</tr>
 				<tr>
 					<td>Address: </td>
-					<td><input type="text" name="address" /></td>
+					<td><input type="text" name="address" required/></td>
 				</tr>
 				<tr>
 					<td>Phone Number: </td>
-					<td><input type="text" name="phone" /></td>
+					<td><input type="text" name="phone" required/></td>
 				</tr>
 				<tr>
 					<td>Are you employed?:</td>
@@ -61,8 +61,9 @@ color: red;
 		<input type="reset" value="Clear" name="clear">
 		<input type="submit" value="Create" name="submit">
 		</form>
-		<h3>Incorrect Information: Please Try Again!</h3>
-	</div>
+
+	<h3>Have you tried:<br>first name: test<br>last name: user<br>username: Admin<br>password: abc123<br>address: 123 Easy St<br>phone: 612-867-5309<br>Employment: Yes</h3>
+</div>
 
 </body>
 </html>

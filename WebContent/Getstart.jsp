@@ -26,7 +26,7 @@ h3 {
 			<tbody>
 			<tr>
 			<td>How Many Months Do You Have Information For: </td>
-			<td><input type="number" name="MonthIndex" size="2" min="0"> </td>
+			<td><input type="number" name="MonthIndex" size="2" min="1" value="1" required> </td>
 			</tr>
 			<tr>
 			<td>Starting Month: </td> 
@@ -45,11 +45,11 @@ h3 {
 				<option value=12>December</option> </select></td>
 			<tr>
 			<td>Year: </td>
-			<td><input type="number" name="year" size="5" value="2020"></td>
+			<td><input type="number" name="year" size="5" value="2020" required></td>
 			</tr>
 			<tr>
 			<td>Enter State Tax Rate: </td>
-			<td><input type="number" name="tax" value="10" size="5" />% </td>
+			<td><input type="number" name="tax" value="10" size="5" required/>% </td>
 			</tr>
 			</tbody>
 				</table>

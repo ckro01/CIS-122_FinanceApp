@@ -1,11 +1,12 @@
 package help;
+// creating a class MonthConvert
 
 public class MonthConvert {
 	public String getendmonth(int monthNum) {
 		String endmonth = "";
 		switch (monthNum) {
 		case 1:
-			endmonth = "January";
+			endmonth = "January"; //assigning the months 
 			break;
 		case 2:
 			endmonth = "February";

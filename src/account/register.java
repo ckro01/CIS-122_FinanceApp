@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class register
  */
+//Information gathered from https://www.guru99.com/jsp-example.html
 @WebServlet("/LoginCheck")
 public class register extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -20,19 +21,19 @@ public class register extends HttpServlet {
 		// TODO Auto-generated method stub
 		String first_name = request.getParameter("first");
 		String last_name = request.getParameter("last");
-		String username = request.getParameter("username");
-		String password = request.getParameter("pass");
+		String uName = request.getParameter("username");
+		String pwd = request.getParameter("pass");
 		String address = request.getParameter("address");
-		String contact = request.getParameter("phone");
+		String phone = request.getParameter("phone");
 		String isEmployed = request.getParameter("employed");
-		
-		if(first_name.isEmpty() || last_name.isEmpty() || username.isEmpty() || 
-				password.isEmpty() || address.isEmpty() || contact.isEmpty() || isEmployed.isEmpty())
+		//Statement below would be used to check against a database should one be created.
+		if(!(first_name.equalsIgnoreCase("test") && last_name.equalsIgnoreCase("user") && uName.equalsIgnoreCase("Admin") 
+				&& pwd.equalsIgnoreCase("abc123") && address.equalsIgnoreCase("123 Easy St") && phone.equals("612-867-5309") && isEmployed.equals("Yes")))
 		{
 			RequestDispatcher req = request.getRequestDispatcher("register_1.jsp");
 			req.include(request, response);
 		}
-		else
+		else //Logs user in.
 		{
 			RequestDispatcher req = request.getRequestDispatcher("menuLogged.jsp");
 			req.forward(request, response);

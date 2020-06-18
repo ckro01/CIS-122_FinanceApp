@@ -1,7 +1,7 @@
 @charset "ISO-8859-1";
 @import url('https://fonts.googleapis.com/css?family=Raleway');
 @import url('https://fonts.googleapis.com/css?family=Oswald');
-
+/*Information on how to use CSS gathered from w3schools.com*/
 html, body {
 	margin: 0 auto;
 	padding: 0;
@@ -52,12 +52,3 @@ intro .inner {
 	color: #fff;
 	border: solid #fff 3px;
 }
-@media screen and (max-width: 768px) {
-	.content h1 {
-		font-size: 250%;
-	}
-	.btn {
-		font-size: 110%;
-		padding: 7px 15px;
-	}
-}	

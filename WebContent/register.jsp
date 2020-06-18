@@ -25,27 +25,27 @@ body {
 			<tbody>
 				<tr>
 					<td>First Name: </td>
-					<td><input type="text" name="first" /></td>
+					<td><input type="text" name="first" required/></td>
 				</tr>
 				<tr>
 					<td>Last Name: </td>
-					<td><input type="text" name="last" /></td>
+					<td><input type="text" name="last" required/></td>
 				</tr>
 				<tr>
 					<td>UserName: </td>
-					<td><input type="text" name="username" /></td>
+					<td><input type="text" name="username" required/></td>
 				</tr>
 					<tr>
 					<td>Password: </td>
-					<td><input type="password" name="pass" /></td>
+					<td><input type="password" name="pass" required/></td>
 				</tr>
 				<tr>
 					<td>Address: </td>
-					<td><input type="text" name="address" /></td>
+					<td><input type="text" name="address" required/></td>
 				</tr>
 				<tr>
 					<td>Phone Number: </td>
-					<td><input type="text" name="phone" /></td>
+					<td><input type="text" name="phone" required/></td>
 				</tr>
 				<tr>
 					<td>Are you employed?:</td>

@@ -150,7 +150,6 @@ public class SaveInputData extends HttpServlet {
 		//After Tax
 		//total income after tax
 		int totalincomeAftertax = totalincome-(totalincome*tax/100);
-				//totalincome - (totalincome * (tax/100));
 
 		//avg income after tax
 		int avgincomeAfterTax = avgincome - (avgincome * tax/100) ;

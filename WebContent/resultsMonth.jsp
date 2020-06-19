@@ -49,7 +49,7 @@ h3 {
 			</tr>
 			<tr>
 				<td>Total Expenses: </td>
-				<td><%=request.getAttribute("moneyleftAftertax") %></td>
+				<td><%=request.getAttribute("totalexpense") %></td>
 			</tr>
 			<tr>
 				<td>Total Income After Tax:</td>
@@ -65,7 +65,7 @@ h3 {
 			</tr>
 			<tr>
 				<td>Total Money Left After Tax: </td>
-				<td><%=request.getAttribute("moneyleft") %></td>
+				<td><%=request.getAttribute("moneyleftAftertax") %></td>
 			</tr>
 			</tbody>
 	</table>

@@ -149,7 +149,8 @@ public class SaveInputData extends HttpServlet {
 
 		//After Tax
 		//total income after tax
-		int totalincomeAftertax = totalincome - (totalincome * (tax/100));
+		int totalincomeAftertax = totalincome-(totalincome*tax/100);
+				//totalincome - (totalincome * (tax/100));
 
 		//avg income after tax
 		int avgincomeAfterTax = avgincome - (avgincome * tax/100) ;
@@ -179,12 +180,12 @@ public class SaveInputData extends HttpServlet {
 		request.setAttribute("avgexpense", avgexpense);
 		request.setAttribute("avgmoneyleft", avgmoneyleft);
 		request.setAttribute("moneyleft", moneyleft);
+		request.setAttribute("totalexpense", totalexpense);
 		request.setAttribute("totalincome", totalincome);
 		request.setAttribute("moneyleftAftertax", moneyleftAftertax);
 		request.setAttribute("totalincomeAftertax", totalincomeAftertax);
 		request.setAttribute("avgincomeAfterTax", avgincomeAfterTax);
 		request.setAttribute("avgmoneyleftAftertax", avgmoneyleftAftertax);
-		request.setAttribute("moneyleft", moneyleft);
 
 		request.getRequestDispatcher("resultsMonth.jsp").forward(request, response);
 	}
